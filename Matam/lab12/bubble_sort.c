@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
+typedef
 typedef int (*Compare)(void*, void*);
 typedef struct s{
     int id;
@@ -40,6 +42,21 @@ int compareStudents(void* a, void* b){
     if((A->id < B->id)&&(strcmp(A->name, B->name)<0)){
         return -1 ;
     }
+
+}
+void swap(void* a, void* b){
+    void* temp = a;
+    a = b;
+    b = temp;
+}
+void printList( void* head,int size, (void)(*Print)(void*)){
+    for (int i = 0; i < size; ++i){
+        Print(head[i]);
+    }
+}
+void printStudent(void* a){
+    Student* s = (Student*)a;
+    printf("%d",s->id);
 
 }
 
