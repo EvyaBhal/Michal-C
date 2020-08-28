@@ -82,3 +82,16 @@ int main(){
     }
     return 0;
 }
+// s = 1 2 3 4
+
+// w = 1 2 3 4
+
+void grep(const char* fileName,const char* word){
+    FILE* fp = fopen(fileName, "r");
+    char line[1024];
+    while(fgets(line,1024,fp)){
+        if(strstr(line,word)){
+            printf("%s",line);
+        }
+    }
+}
